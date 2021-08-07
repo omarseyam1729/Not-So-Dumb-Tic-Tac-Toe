@@ -1,0 +1,52 @@
+
+body {
+background:linear-gradient(to right,rgb(197, 197, 197),rgb(92, 92, 92));
+}
+h1{
+    cursor: default;
+}
+.box{
+
+    height:150px;
+    width:150px;
+    max-height: 11em;
+    max-width: 11em;
+    color:wheat;
+    text-align: center;
+    vertical-align: middle;
+    font-size: 3em;
+    line-height: 150px;
+    cursor: default;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    background: rgb(185, 62, 62);
+    box-shadow: 0.5em 0.5em 0.5em rgb(83, 83, 83);
+    
+}
+.box:hover{
+    height:160px;
+    width: 160px;
+    box-shadow: 0.5em 0.5em 0.5em rgb(65, 65, 65);
+}
+#container{
+    margin:0 auto;
+    display: grid;
+    width:35em;
+    grid-row-gap: 1em;
+    grid-column-gap: 0.1em;
+    grid-template-columns: repeat(3, 1fr);
+}
+#mode{
+    margin: 0 auto;
+    margin-top: 5em;
+    height:100px;
+    width:400px;
+    background-color: rgb(49, 49, 49);
+    font-size: 2em;
+    text-align: center;
+    vertical-align: middle;
+    color:rgb(255, 255, 255);
+    text-shadow: 2px 2px rgb(92, 92, 92);
+    cursor:default;
+}
