@@ -41,31 +41,31 @@ function draw(arr){
     return true;
 }
 function play(arr,turn,depth){
-    if(7-depth<0)return 0;
-    if(check(arr) && turn==0 && depth<=2)return -100000;
-    if(check(arr) && turn==0)return -1*(7-depth);
-    if(check(arr) && turn==1)return 1*(7-depth);
+    if(depth==7)return 0;
+    if(check(arr) && turn==0)return -10000;
+    if(check(arr) && turn==1)return 10000;
     if(draw(arr))return 0;
-   let score=0;
       if(turn==0){
+          let score=-10000;
           for(let i=0;i<9;i++)if(arr[i]==""){
             arr[i]="O";
-            score+=play(arr,1,depth+1);
-            arr[i]="";
+            score=Math.max(score,play(arr,1,depth+1));
+            arr[i]=""; 
             
         }
+        return score;
       }
       else{
+        let score=10000;
         for(let i=0;i<9;i++)if(arr[i]==""){
             arr[i]="X";
-            score+=play(arr,0,depth+1);
+            score=Math.min(score,play(arr,0,depth+1));
             arr[i]="";
-            
         }
+        return score;
       }
       return score;
 }
-
 function runs(arr){
 let max_val=-1000000;
 let ind=-1;
